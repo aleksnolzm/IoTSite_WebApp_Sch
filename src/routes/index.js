@@ -9,6 +9,7 @@ router.get('/',(req, res, next) =>{
 });
 
 /*------------------  REGISTRO ------------------*/
+/*
 router.get('/signup',(req, res, next) =>{
     res.render('signup');
 }); // lee peticion get y manda la pagina signup
@@ -18,6 +19,7 @@ router.post('/signup', passport.authenticate('local-signup', {
     failureRedirect: '/signup',
     passReqToCallback: true
 }));
+*/
 
 /*-------------------  ACCESO ------------------*/
 router.get('/login',(req, res) =>{
