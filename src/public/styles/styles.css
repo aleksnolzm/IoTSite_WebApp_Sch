@@ -1,0 +1,280 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+:root{
+    --main-bg-color: #5e2129;
+    --text-bg-color: #ffffff;
+}
+html,body{
+    margin: 0px;
+    height: 100%;
+}
+
+.homePageBody {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+}
+/*----------------- BACKGROUND --------------------*/
+#particle-canvas{   
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: -2;
+}
+
+.contenedor{
+    margin: 0;
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /*min-height: 100vh;*/
+    justify-content: center;
+    align-items: center;
+}
+/*-------------------- LEFT SIDE -------------------*/
+.leftSideBox{
+    /*background-color: violet;*/
+    margin: 0;
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    /*min-height: 100vh;*/
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+/*-------------------- RIGHT SIDE -------------------*/
+.rightSideBox{
+    /*background-image: linear-gradient(to bottom,rgba(131, 131, 131, 0.644),rgba(185, 185, 185, 0.466));*/
+    position: relative;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 412px;
+    height: 100%;
+    /*min-height: 100vh;*/
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid rgba(204, 204, 204, 0.349);
+    background-color: var(--main-bg-color);;
+
+    -webkit-box-shadow: -1px 0px 15px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 0px 15px 0px rgba(0,0,0,0.75);
+    box-shadow: -1px 0px 15px 0px rgba(0,0,0,0.75);
+    
+    /*display: none;*/
+}
+
+/*-------------------- LEFT SIDE CONTENT -------------------*/
+.logoRadio {
+    display: block;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    max-width: 500px;
+    height: auto;
+    margin: auto;
+    bottom: 80px;
+}
+
+
+
+.logoRadio img{
+    width: 100%;
+    height: 100%;
+}
+
+.svgWaves{
+    position: relative;
+    left: 34.48%;
+    bottom: 16%;
+    top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.radio-wave{
+    fill: rgb(160, 160, 160);
+  }
+
+.wave1{
+    animation-name: fade-out;
+    animation-direction: normal;
+    animation-duration: 2.4s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+}
+
+.wave2{
+    animation-name: fade-out;
+    animation-direction: normal;
+    animation-duration: 2.4s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-delay: 0.4s;
+}
+
+.wave3{
+    animation-name: fade-out;
+    animation-direction: normal;
+    animation-duration: 2.4s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-delay: 0.8s;
+}
+
+
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+
+/*-------------------- RIGHT SIDE CONTENT ------------------*/
+.loginFormBoxJS {
+    flex-wrap: wrap;
+    position: relative;
+    text-align: left;
+    align-items: center;
+    width: 100%;
+    height: 380px;
+    margin-bottom: auto;
+    margin-top: auto;
+    margin-left: 24px;
+    margin-right: 24px;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.textLogon{
+    position: relative;
+    display: flex;
+    text-align: left;
+    width: 100%;
+    height: 85px;
+    justify-content: left;
+}
+
+.textLogon h1{
+    height: 40px;
+    margin-top: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-left: 0;
+    position: relative;
+    font-size: 38px;
+    font-weight: 200;
+    color: var(--text-bg-color);
+}
+
+.loginFormsWr,
+.loginFormsBottom {
+    font-size: 16px;
+}
+
+.loginFormsWr {
+    outline: none;
+    padding: 12px;
+    display: flex;
+    width: 100%;
+    max-width: 412px;
+    border-bottom: 1px solid var(--text-bg-color);
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    background-color: rgba(255, 255, 255, 0);
+    color: var(--text-bg-color);
+}
+.loginFormsWr::placeholder{
+    color: var(--text-bg-color);
+    font-size: 16px;
+}
+
+
+.loginFormsBottom {
+    padding: 8px;
+    width: 120px;
+    border-radius: 4px;
+    background: var(--text-bg-color);
+    color: var(--main-bg-color);
+    margin-left: 0;
+    margin-right: 14px;
+    margin-top: 18px;
+    border: 0;
+    cursor: pointer;
+    transition: all .3s ease;   
+}
+
+.txtAlertSession{
+    position: relative;
+    text-align: center;
+    height: 14px;
+    width: 300px;
+    padding: 0;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: normal;
+    margin: 10px auto 0;
+}
+
+.loginFormsBottom:hover {
+    filter: brightness(120%);
+}
+/* ----------------- OPTIONS ------------------- */
+.logoRadioRight {
+    display: none;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    max-width: 300px;
+    height: auto;
+    margin: auto;
+    padding: 28px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+.logoRadioRight img{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/*----------------- QUERIES ------------------ */
+
+@media only screen and (max-width: 768px) {
+    .leftSideBox{
+        display: none;
+    }
+    .logoRadioRight {
+        display: block;
+    }
+    .textLogon h1{
+        margin-left: auto;
+        font-size: 24px;
+    }
+    .loginFormBoxJS{
+        text-align: center;
+    }
+    
+}
+ 

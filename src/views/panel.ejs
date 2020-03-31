@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>Panel Radio IPN</title>
+    <link rel="stylesheet" href="../public/styles/usrStyle.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oxanium|Quantico&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/assets/files/main/img/template/favicon.ico">
+</head>
+<!--------------------------------- CUERPO DE MAQUETACION HTML ---------------------------------------------->
+<body class="dashBodyBox">
+    <div id="particle-canvas"></div>
+    <header>
+        <div class="radioLogonBox">
+              <img src="../public/images/logoheadernav.png">
+        </div>
+        <div class="navLinksBox">
+             <nav class="navLinksList">
+                 <ul>
+                    <li><a href="/logout"> SALIR </a></li>
+                 </ul>
+             </nav>
+        </div>
+    </header>
+
+    <div class="contenedor">      
+                <div class="meterBox meter1">
+                    <svg viewBox="0 0 24 24">
+                         <path d="M17,17A5,5 0 0,1 12,22A5,5 0 0,1 7,17C7,15.36 7.79,13.91 9,13V5A3,3 0 0,1 12,2A3,3 0 0,1 15,5V13C16.21,13.91 17,15.36 17,17M11,8V14.17C9.83,14.58 9,15.69 9,17A3,3 0 0,0 12,20A3,3 0 0,0 15,17C15,15.69 14.17,14.58 13,14.17V8H11Z" />
+                    </svg>
+                    <div class="number" id="tempTxValue"> <%= dashVars[0].txTemp %> <span class="symbol">ºC</span></div>
+                     <div class="unit">TEMPERATURA  TX</div>
+                </div>
+                <div class="meterBox meter2">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M17,17A5,5 0 0,1 12,22A5,5 0 0,1 7,17C7,15.36 7.79,13.91 9,13V5A3,3 0 0,1 12,2A3,3 0 0,1 15,5V13C16.21,13.91 17,15.36 17,17M11,8V14.17C9.83,14.58 9,15.69 9,17A3,3 0 0,0 12,20A3,3 0 0,0 15,17C15,15.69 14.17,14.58 13,14.17V8H11Z" />
+                   </svg>
+                   <div class="number" id="tempSiteValue"> <%= dashVars[0].siteTemp %> <span class="symbol">ºC</span></div>
+                    <div class="unit">TEMPERATURA SITE</div>
+                </div>
+                <div class="meterBox meter3">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12,20A6,6 0 0,1 6,14C6,10 12,3.25 12,3.25C12,3.25 18,10 18,14A6,6 0 0,1 12,20Z"></path>
+                    </svg>
+                    <div class="number" id="humSiteValue"> <%= dashVars[0].siteRH %> <span class="symbol">%HR</span></div>
+                    <div class="unit">HUMEDAD REL. SITE</div>
+                </div>
+                <div class="historialBox historial1">
+                    <div class="tableTitle"> <h1> PUERTA DE SITE </h1> </div>
+                    <div class="tableBox">
+                      <table style="width:100%">
+                            <tr>
+                              <th class="mainTextTable">Fecha / Hora</th>
+                              <th class="mainTextTable">Estado</th>
+                            </tr>
+                            
+
+                            <% for(var i=0; i < dashVars.length; i++) { %>
+                            <tr>
+                              <td class="valueTextTable" id="fecha<%= i %>"> <%= dashVars[i].fecha %> </td>
+                              <td class="valueTextTable" id="puerta<%= i %>"> <%= dashVars[i].estadoPuerta %> </td>
+                            </tr>
+                            <% } %>
+                      </table>
+                    </div>
+                </div>
+                <div class="historialBox historial2">
+                    <div class="tableTitle"> <h1> ESTADO DE ENERGÍA </h1> </div>
+                    <div class="tableBox">
+                        <table style="width:100%">
+                            <tr>
+                              <th class="mainTextTable">Fecha / Hora</th>
+                              <th class="mainTextTable">Estado</th>
+                            </tr>
+                          
+                            <% for(var i=0; i < dashVars.length; i++) { %>
+                              <tr>
+                                <td class="valueTextTable" id="fecha<%= i %>"> <%= dashVars[i].fecha %> </td>
+                                <td class="valueTextTable" id="energia<%= i %>"> <%= dashVars[i].estadoEnergia %> </td>
+                              </tr>
+                            <% } %>
+                        </table>
+                    </div>
+                </div>
+    </div>
+    <script src="/socket.io/socket.io.js" charset="utf-8"></script>
+    <script src="../public/scripts/socketClient.js"></script>
+    <script src="../public/scripts/backgroundCanvas.js"></script>
+</body>
+</html>
