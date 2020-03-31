@@ -48,12 +48,13 @@
                     <div class="unit">HUMEDAD REL. SITE</div>
                 </div>
                 <div class="historialBox historial1">
-                    <div class="tableTitle"> <h1> PUERTA DE SITE </h1> </div>
+                    <div class="tableTitle"> <h1> ESTADO DE VARIABLES </h1> </div>
                     <div class="tableBox">
                       <table style="width:100%">
                             <tr>
-                              <th class="mainTextTable">Fecha / Hora</th>
-                              <th class="mainTextTable">Estado</th>
+                              <th class="mainTextTable">Fecha - Hora </th>
+                              <th class="mainTextTable"> Puerta </th>
+                              <th class="mainTextTable"> Energía </th>
                             </tr>
                             
 
@@ -61,27 +62,10 @@
                             <tr>
                               <td class="valueTextTable" id="fecha<%= i %>"> <%= dashVars[i].fecha %> </td>
                               <td class="valueTextTable" id="puerta<%= i %>"> <%= dashVars[i].estadoPuerta %> </td>
+                              <td class="valueTextTable" id="energia<%= i %>"> <%= dashVars[i].estadoEnergia %> </td>
                             </tr>
                             <% } %>
                       </table>
-                    </div>
-                </div>
-                <div class="historialBox historial2">
-                    <div class="tableTitle"> <h1> ESTADO DE ENERGÍA </h1> </div>
-                    <div class="tableBox">
-                        <table style="width:100%">
-                            <tr>
-                              <th class="mainTextTable">Fecha / Hora</th>
-                              <th class="mainTextTable">Estado</th>
-                            </tr>
-                          
-                            <% for(var i=0; i < dashVars.length; i++) { %>
-                              <tr>
-                                <td class="valueTextTable" id="fecha<%= i %>"> <%= dashVars[i].fecha %> </td>
-                                <td class="valueTextTable" id="energia<%= i %>"> <%= dashVars[i].estadoEnergia %> </td>
-                              </tr>
-                            <% } %>
-                        </table>
                     </div>
                 </div>
     </div>

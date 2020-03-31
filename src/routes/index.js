@@ -76,14 +76,6 @@ router.get('/api/panel', (req, res, next) =>{
     res.send('Error: This function is not avialable');
 });
 
-/*------------------  PANEL DE VISTA ------------------*/
-/*router.get('/dev', async (req, res, next) =>{
-    const dashVars =  await callbackDB.find().sort({$natural:-1}).limit(8);
-    res.render('panel', {
-        dashVars
-      });
-}); */ 
-
 router.get('/logout', (req, res, next) => {
     req.logout();
     res.redirect('/login');
@@ -95,10 +87,6 @@ router.get('/panel', checkAuthentication, async (req, res, next) =>{
         dashVars
       });
 });
-
-
-//router.post('/api/dashboard',  ...   );
-
 
 function checkAuthentication(req, res, next){
     if(req.isAuthenticated()){

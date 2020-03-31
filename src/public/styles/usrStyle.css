@@ -154,7 +154,7 @@
   .historialBox{
     display: block;
     position: relative;
-    width: 420px;
+    width: 620px;
     height: 100%;
     margin-top: 16px;
     margin-bottom: 10px;
@@ -256,3 +256,11 @@
       padding-top: 2px;
       padding-bottom: 2px;
   }
+
+@media only screen and (max-width: 768px) {
+    .historialBox{
+        display: block;
+        position: relative;
+        width: 420px;
+    }
+}

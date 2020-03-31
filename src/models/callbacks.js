@@ -8,7 +8,7 @@ const callbackSchema = new Schema({
     generalStatus: Number,
     estadoPuerta: String,
     estadoEnergia: String,
-    fecha: Date
+    fecha: String
 });
 
 module.exports = mongoose.model('callbacks', callbackSchema);
