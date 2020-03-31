@@ -60,6 +60,9 @@ router.post('/api/panel',  async(req, res) =>{
             callbackResponse.estadoPuerta = 'Cerrada';
             callbackResponse.estadoEnergia = 'Inactivo';
     }
+
+    callbackResponse.fecha = Date();
+    
     const callbackData =  new callbackDB(callbackResponse);
     await callbackData.save();
 
