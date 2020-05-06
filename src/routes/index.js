@@ -61,7 +61,7 @@ router.post('/api/panel',  async(req, res) =>{
             callbackResponse.estadoEnergia = 'Inactivo';
     }
 
-    callbackResponse.fecha = Date();
+    //callbackResponse.fecha = Date();
     
     const callbackData =  new callbackDB(callbackResponse);
     await callbackData.save();
