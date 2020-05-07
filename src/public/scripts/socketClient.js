@@ -1,5 +1,5 @@
-//var socket = io.connect('https://radio-xhipn.herokuapp.com:443/');
-var socket = io.connect('http://localhost:3000');
+var socket = io.connect('https://radio-xhipn.herokuapp.com:443/');
+//var socket = io.connect('http://localhost:3000');
 
 const updateTempTxValue = document.getElementById('tempTxValue');
 const updateTempSiteValue = document.getElementById('tempSiteValue');
