@@ -1,4 +1,5 @@
-var socket = io.connect('https://radio-xhipn.herokuapp.com:443/');
+//var socket = io.connect('https://radio-xhipn.herokuapp.com:443/');
+var socket = io.connect('http://localhost:3000');
 
 const updateTempTxValue = document.getElementById('tempTxValue');
 const updateTempSiteValue = document.getElementById('tempSiteValue');
@@ -40,6 +41,24 @@ socket.on('emergent_callback', function (callback) {
   updateTempTxValue.innerHTML = `${callback[0].txTemp}<span class="symbol">ºC</span>`;
   updateTempSiteValue.innerHTML = `${callback[0].siteTemp}<span class="symbol">ºC</span>`;
   updateHumSiteValue.innerHTML = `${callback[0].siteRH}<span class="symbol">%HR</span>`;
+
+  if( callback[0].txTemp >= 45){
+    updateTempTxValue.className = 'numberWarning';
+  }else{
+    updateTempTxValue.className = 'number';
+  }
+
+  if(callback[0].siteTemp >= 45){
+    updateTempSiteValue.className = 'numberWarning';
+  }else{
+    updateTempSiteValue.className = 'number';
+  }
+
+  if(callback[0].siteRH >=80){
+    updateHumSiteValue.className = 'numberWarning';
+  }else{
+    updateHumSiteValue.className = 'number';
+  }
 
   for(var i = 0; i<8 ; i++)
   {

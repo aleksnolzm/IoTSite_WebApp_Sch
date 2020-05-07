@@ -5,7 +5,7 @@
     font-family: "Roboto", sans-serif;
 }
 :root{
-    --main-bg-color: #5e2129;
+    --main-bg-color: #273b72;
     --text-bg-color: #ffffff;
 }
 html,body{
@@ -37,6 +37,7 @@ html,body{
     /*min-height: 100vh;*/
     justify-content: center;
     align-items: center;
+    background-image: linear-gradient(to bottom, rgba(49, 214, 255, 0.466),rgba(253, 255, 255, 0.479) ) ;
 }
 /*-------------------- LEFT SIDE -------------------*/
 .leftSideBox{
@@ -75,36 +76,61 @@ html,body{
 }
 
 /*-------------------- LEFT SIDE CONTENT -------------------*/
+.hill-background,
+.hill-foreground {
+  transition: background-color 0.5s ease-out;
+}
+
+.hills-wrapper {
+    position: relative;
+  }
+  
+  .hill-background,
+  .hill-foreground {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
+
+  .hill-background {
+    height: 40%;
+    border-radius: 175% 0 0 0;
+  }
+  
+  .hill-foreground {
+    height: 28%;
+    border-radius: 0 280% 0 0;
+  }
+
+  .hill-background {
+    background-color: #2BC03C;
+  }
+  
+  .hill-foreground {
+    background-color: #2ecc40;
+  }
+
 .logoRadio {
     display: block;
     justify-content: center;
     align-content: center;
     position: relative;
     max-width: 500px;
+    width: 500px;
     height: auto;
     margin: auto;
-    bottom: 80px;
-}
-
-
-
-.logoRadio img{
-    width: 100%;
-    height: 100%;
+    bottom: auto;
+    top: auto;
+    
 }
 
 .svgWaves{
     position: relative;
-    left: 34.48%;
-    bottom: 16%;
-    top: 80px;
     margin-left: auto;
     margin-right: auto;
+    
 }
 
-.radio-wave{
-    fill: rgb(160, 160, 160);
-  }
 
 .wave1{
     animation-name: fade-out;
@@ -132,6 +158,21 @@ html,body{
     animation-delay: 0.8s;
 }
 
+.xclam1{
+    animation-name: xclam-out;
+    animation-direction: normal;
+    animation-duration: 4.2s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+}
+
+.xclam2{
+    animation-name: xclam-out;
+    animation-direction: normal;
+    animation-duration: 3.0s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+}
 
   @keyframes fade-out {
     0% {
@@ -141,7 +182,28 @@ html,body{
       opacity: 0;
     }
   }
-
+  @keyframes xclam-out {
+    0% {
+      opacity: 0;
+    }
+    50% {
+        opacity: 1;
+      }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes tune-out {
+    0% {
+      opacity: 0.3;
+    }
+    50% {
+        opacity: 1;
+      }
+    100% {
+      opacity: 0.3;
+    }
+  }
 
 /*-------------------- RIGHT SIDE CONTENT ------------------*/
 .loginFormBoxJS {
@@ -240,22 +302,26 @@ html,body{
     justify-content: center;
     align-content: center;
     position: relative;
-    max-width: 300px;
+    max-width: 200px;
+    width: 200px;
     height: auto;
+    max-height: 100px;
     margin: auto;
-    padding: 28px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    padding: 2px;
+    margin-top: 4px;
+    margin-bottom: 0px;
     margin-left: auto;
     margin-right: auto;
+    animation-name: tune-out;
+    animation-direction: normal;
+    animation-duration: 5.0s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
 }
 
 
 
-.logoRadioRight img{
-    width: 100%;
-    height: 100%;
-}
+
 
 
 
