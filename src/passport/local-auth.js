@@ -11,7 +11,7 @@ passport.serializeUser((user, done) => {
     const user = await User.findById(id);
     done(null, user);
   });
-/*------------------------- AUTENTICACION DE USUARIO EXISTENTE --------------------- */
+/*------------------------- AUTHENTICATION OF USER NOT REGISTERED --------------------- */
   passport.use('local-signup', new LocalStrategy({
     usernameField: 'email',
     passwordField: 'password',
@@ -31,7 +31,7 @@ passport.serializeUser((user, done) => {
     }
   }));
   
-/*------------------------- AUTENTICACION DE USUARIO EXISTENTE --------------------- */
+/*------------------------- AUTHENTICATION OF USER REGISTERED --------------------- */
   passport.use('local-login', new LocalStrategy({
     usernameField: 'email',
     passwordField: 'password',

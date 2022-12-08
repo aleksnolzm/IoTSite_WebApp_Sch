@@ -1,6 +1,3 @@
-// mongod --dbpath=/Users/alekznolz/data/db
-// npm run dev
-// https://youtu.be/uVltgEcjNww?t=4648
 const http = require('http');
 const express = require('express');
 const engine = require('ejs-mate');
